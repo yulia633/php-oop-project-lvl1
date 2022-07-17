@@ -1,0 +1,7 @@
+/vendor/
+/build/
+*.cache
+clover.xml
+/xml-coverage/
+*.txt
+/.phpunit.result.cache
