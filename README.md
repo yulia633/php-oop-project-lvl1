@@ -48,3 +48,31 @@ $schema->contains('whatthe')->isValid('what does the fox say'); // false
 $v->string()->minLength(10)->minLength(5)->isValid('Hexlet'); // true
 
 ```
+
+#### Проверка чисел
+
+```php
+
+<?php
+
+$v = new \Hexlet\Validator\Validator();
+
+$schema = $v->number();
+
+$schema->isValid(null); // true
+
+$schema->required();
+
+$schema->isValid(null); // false
+
+// Достаточно работать с типом Integer
+$schema->isValid(7); // true
+
+$schema->positive()->isValid(10); // true
+
+$schema->range(-5, 5);
+
+$schema->isValid(-3); // true
+$schema->isValid(5); // true
+
+```
