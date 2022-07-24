@@ -50,11 +50,11 @@ class NumberTest extends TestCase
     {
         $schema = $this->validator->number();
 
+        $schema->positive()->isValid(10);
+
         $schema->range(-5, 5);
 
-        $this->assertFalse($schema->isValid(-6));
-        $this->assertTrue($schema->isValid(-3));
-
+        $this->assertFalse($schema->isValid(-3));
         $this->assertTrue($schema->isValid(5));
     }
 }

@@ -72,7 +72,7 @@ $schema->positive()->isValid(10); // true
 
 $schema->range(-5, 5);
 
-$schema->isValid(-3); // true
+$schema->isValid(-3); // false
 $schema->isValid(5); // true
 
 ```
