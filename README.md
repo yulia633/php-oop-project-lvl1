@@ -76,3 +76,27 @@ $schema->isValid(-3); // false
 $schema->isValid(5); // true
 
 ```
+
+#### Проверка массивов
+
+```php
+
+<?php
+
+$v = new \Hexlet\Validator\Validator();
+
+$schema = $v->array();
+
+$schema->isValid(null); // true
+
+$schema = $schema->required();
+
+$schema->isValid([]); // true
+$schema->isValid(['hexlet']); // true
+
+$schema->sizeof(2); // true
+
+$schema->isValid(['hexlet']); // false
+$schema->isValid(['hexlet', 'code-basics']); // true
+
+```
