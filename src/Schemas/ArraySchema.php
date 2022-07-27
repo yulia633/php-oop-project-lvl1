@@ -25,6 +25,26 @@ class ArraySchema
         return $this;
     }
 
+    public function shape(array $schemas): self
+    {
+        $this->rules['shape'] = function ($value) use ($schemas) {
+            return $this->isCheck($schemas, $value);
+        };
+
+        return $this;
+    }
+
+    private function isCheck(array $schemas, array $value): bool
+    {
+        foreach ($schemas as $key => $schema) {
+            if (!$schema->isValid($value[$key])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public function isValid(mixed $value): bool
     {
         $flag = true;

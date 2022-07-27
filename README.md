@@ -99,4 +99,15 @@ $schema->sizeof(2); // true
 $schema->isValid(['hexlet']); // false
 $schema->isValid(['hexlet', 'code-basics']); // true
 
+// Позволяет описывать валидацию для ключей массива
+$schema->shape([
+    'name' => $v->string()->required(),
+    'age' => $v->number()->positive(),
+]);
+
+$schema->isValid(['name' => 'kolya', 'age' => 100]); // true
+$schema->isValid(['name' => 'maya', 'age' => null]); // true
+$schema->isValid(['name' => '', 'age' => null]); // false
+$schema->isValid(['name' => 'ada', 'age' => -5]); // false
+
 ```
