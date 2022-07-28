@@ -1,10 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/yulia633/php-oop-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/yulia633/php-oop-project-lvl1/actions)
-
 [![Github Actions Status](https://github.com/yulia633/php-oop-project-lvl1/workflows/PHP%20CI/badge.svg)](https://github.com/yulia633/php-oop-project-lvl1/actions)
-
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9aa567c0ff8910595dd4/test_coverage)](https://codeclimate.com/github/yulia633/php-oop-project-lvl1/test_coverage)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/9aa567c0ff8910595dd4/maintainability)](https://codeclimate.com/github/yulia633/php-oop-project-lvl1/maintainability)
 
 ### О коде
