@@ -21,7 +21,7 @@ class NumberSchema
 
     public function positive(): self
     {
-        $this->rules['positive'] = fn (int $value) => $value > 0;
+        $this->rules['positive'] = fn (int|null $value) => $value === null || $value > 0;
         return $this;
     }
 
