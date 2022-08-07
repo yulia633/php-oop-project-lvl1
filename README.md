@@ -108,3 +108,32 @@ $schema->isValid(['name' => '', 'age' => null]); // false
 $schema->isValid(['name' => 'ada', 'age' => -5]); // false
 
 ```
+
+#### Добавление собственных валидаторов
+
+```php
+<?php
+
+$v = new \Hexlet\Validator\Validator();
+
+$fn = fn($value, $start) => str_starts_with($value, $start);
+// Метод добавления новых валидаторов
+// addValidator($type, $name, $fn)
+$v->addValidator('string', 'startWith', $fn);
+
+// Новые валидаторы вызываются через метод test
+$schema = $v->string()->test('startWith', 'H');
+$schema->isValid('exlet'); // false
+$schema->isValid('Hexlet'); // true
+
+$fn = fn($value, $min) => $value >= $min;
+$v->addValidator('number', 'min', $fn);
+
+$schema = $v->number()->test('min', 5);
+$schema->isValid(4); // false
+$schema->isValid(6); // true
+
+// Если валидатора нет, то бросаем исключение
+$v->addValidator('wrong-name', 'startWith', $fn); // boom!
+
+```
